@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('clonar repositoio') {
+            steps {
+             git branch: 'main', url: 'https://github.com/Michelecorrea/teste_ebac_e2e_shop.git'
+            }
+        }
+          stage('Instalar dependencias') {=
+            steps {
+            }
+        }
+        stage('Executar Testes') {
+            steps {
+sh 'NO_COLOR=1 npm run cy:run'
+         
+            }
+        }
+  }
+}
+
+
+
+
+
